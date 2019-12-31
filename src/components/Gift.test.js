@@ -12,27 +12,36 @@ describe('Gift', () => {
 
   it("init a persion and present in `state`", () => {
     expect(gift.state()).toEqual({
-      person:'',
-      present:''
+      person: '',
+      present: ''
     })
   })
 
 
-  describe('When typing into the person instpu', ()=>{
-    beforeEach(()=>{
-      gift.find('.input-person').simulate('change', {target:{value:'abcd'}})
+  describe('When typing into the person input', () => {
+    const person = 'abcd';
+    beforeEach(() => {
+      gift.find('.input-person').simulate('change', { target: { value: person, name: 'person' } })
     })
 
-    afterEach(()=>{
-      gift.setState({gifts:[]})
-    })
-    
     it("updates the person in state", () => {
-      expect(gift.state().person).toEqual('abcd')
+      expect(gift.state().person).toEqual(person)
     })
-  
+
   })
 
+  describe('When typing into the present input', () => {
+    const present = 'abcd';
+
+    beforeEach(() => {
+      gift.find('.input-present').simulate('change', { target: { value: present, name: 'present' } })
+    })
+
+    it("updates the present in state", () => {
+      expect(gift.state().present).toEqual(present)
+    })
+
+  })
 })
 
 
