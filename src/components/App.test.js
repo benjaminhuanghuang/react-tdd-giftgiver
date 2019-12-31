@@ -15,6 +15,7 @@ describe('App', ()=>{
   })
 
   describe('When click `add-gift` button', ()=>{
+    const id = 1;
     beforeEach(()=>{
       app.find('.btn-add').simulate('click');
     })
@@ -24,16 +25,31 @@ describe('App', ()=>{
     })
     
     it("add a new gift to state when click the add gift button", () => {
-      expect(app.state().gifts).toEqual([{ id: 1 }])
+      expect(app.state().gifts).toEqual([{ id }])
     })
     
     
     it("add a new gift to the rendered list when click the add gift button", () => {
-      expect(app.find('.gift-list').children().length).toEqual(1)
+      expect(app.find('.gift-list').children().length).toEqual(id)
     })
 
     it("create a Gift component", () => {
       expect(app.find('Gift').exists()).toBe(true)
+    })
+
+    describe('remove the added gift', ()=>{
+      beforeEach(()=>{
+        app.instance().removeGift(id)
+      })
+  
+      afterEach(()=>{
+        
+      })
+      
+      it('removes the gift from `state `', ()=>{
+        expect(app.state().gifts).toEqual([])
+      })
+      
     })
   })
 })

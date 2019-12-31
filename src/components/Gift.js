@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 export default class Gift extends Component {
   constructor(params) {
@@ -27,6 +27,9 @@ export default class Gift extends Component {
             <Form.Control id="present" className='input-present' onChange={this.handleChange}></Form.Control>
           </Form.Group>
         </Form>
+        <Button className="btn-remove" onClick={()=>this.props.removeGift(this.props.gift.id)}>
+          Remove Gift
+        </Button>
       </div>
     )
   }
