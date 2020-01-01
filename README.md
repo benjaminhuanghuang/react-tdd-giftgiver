@@ -12,3 +12,18 @@
   npm i enzyme-adapter-react-16 -D
 ```
 add setupTests.js for enyme
+
+
+
+## Coverage
+npm run test -- --coverage
+
+config
+```
+"jest": {
+    "collectCoverageFrom":[
+      "src/**/*.js",
+      "!src/index.js"
+    ]
+  }
+```
