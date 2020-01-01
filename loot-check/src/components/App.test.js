@@ -9,6 +9,12 @@ describe('App', ()=>{
   it("renders correnctly", () => {
     expect(app).toMatchSnapshot()
   })
+
+
+  it("constains a Wallet componnet", () => {
+    //console.log(app.debug());  // app constains <Connect(Wallet)/>
+    expect(app.find('Connect(Wallet)').exists()).toBe(true);
+  })
   
 })
 

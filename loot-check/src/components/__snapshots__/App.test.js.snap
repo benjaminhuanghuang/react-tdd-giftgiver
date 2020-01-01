@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`App constains a Wallet componnet 1`] = `ShallowWrapper {}`;
+
 exports[`App renders correnctly 1`] = `ShallowWrapper {}`;

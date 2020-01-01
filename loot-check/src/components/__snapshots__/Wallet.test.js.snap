@@ -2,4 +2,6 @@
 
 exports[`App renders correnctly 1`] = `ShallowWrapper {}`;
 
+exports[`Wallet display balance from props 1`] = `ShallowWrapper {}`;
+
 exports[`Wallet renders correnctly 1`] = `ShallowWrapper {}`;
