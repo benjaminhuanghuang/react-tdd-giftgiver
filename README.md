@@ -1,6 +1,6 @@
 ## Udemy - React - Mastering Test Driven Development
 - [Udemy course](https://www.udemy.com/course/react-tdd/)
-- [github]()
+- [github](https://github.com/15Dkatz/react-tdd)
 
 
 ## Setup
