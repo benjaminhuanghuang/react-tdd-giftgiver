@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 
- class App extends Component {
+ class Wallet extends Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ import React, { Component } from 'react'
   }
 }
 
-export default App
+export default Wallet
