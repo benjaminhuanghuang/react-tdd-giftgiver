@@ -11,11 +11,14 @@ describe('App', ()=>{
   })
 
 
-  it("constains a Wallet componnet", () => {
+  it("constains a connected Wallet componnet", () => {
     //console.log(app.debug());  // app constains <Connect(Wallet)/>
     expect(app.find('Connect(Wallet)').exists()).toBe(true);
   })
   
+  it('contians a connected Loot component', ()=>{
+    expect(app.find('Connect(Loot)').exists()).toBe(true);
+  })
 })
 
 

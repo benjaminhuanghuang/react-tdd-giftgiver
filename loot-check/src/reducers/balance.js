@@ -1,13 +1,26 @@
 import * as constants from '../actions/constants'
+//
+import { read_cookie, bake_cookie } from 'sfcookies'
+
+const BLANCE_COOKIE = 'BLANCE_COOKIE';
+
 const balance = (state = 0, action) => {
-  switch(action.type){
+  let balance;
+  switch (action.type) {
     case constants.SET_BALANCE:
-      return action.balance
-
+      balance = action.balance
+      break;
+    case constants.DEPOSIT:
+      balance = action.deposit + state;
+      break
+    case constants.WITHDRAW:
+      balance = state - action.withdraw;
+      break
     default:
-      return 0;
+      balance =  parseInt(read_cookie(BLANCE_COOKIE), 10) || state;
   }
+  bake_cookie(BLANCE_COOKIE , balance)
+  return balance;
 }
-
 
 export default balance;
